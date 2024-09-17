@@ -33,6 +33,7 @@ def post_detail(request, slug):
     comment_count = post.comments.filter(approved=True).count()
 
     if request.method == "POST":
+        print("Received a POST request")
         comment_form = CommentForm(data=request.POST)
         if comment_form.is_valid():
             comment = comment_form.save(commit=False)
@@ -43,6 +44,7 @@ def post_detail(request, slug):
 
 
     comment_form = CommentForm()
+    print("About to render template")
     
     return render(request, "blog/post_detail.html", 
     {
@@ -58,6 +60,7 @@ def comment_edit(request, slug, comment_id):
     view to edit comments
     """
     if request.method == "POST":
+        
         queryset = Post.objects.filter(status=1)
         post = get_object_or_404(queryset, slug=slug)
         comment = get_object_or_404(Comment, pk=comment_id)
