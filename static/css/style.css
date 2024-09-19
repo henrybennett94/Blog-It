@@ -1,12 +1,12 @@
 body {
-    background-color: #F9FAFC;
+    background-color: #d38c5c;
 }
 
 .brand {
     font-family: Lato, sans-serif;
     font-size: 1.4rem;
     font-weight: 700;
-    color: #4A4A4F;
+    color: #073908;
 }
 
 .red-o {
@@ -26,7 +26,7 @@ body {
 }
 
 .main-bg {
-    background-color: #F9FAFC;
+    background-color: #85ddc8;
 }
 
 .card {
@@ -98,7 +98,7 @@ body {
 
 .post-link:hover,
 .page-link {
-    color: #E84610;
+    color: #e410e8;
 }
 
 .post-title {
@@ -119,8 +119,8 @@ body {
 
 .btn-signup:hover,
 .btn-signup:active {
-    background-color: #fff;
-    color: #23BBBB;
+    background-color: #c036be;
+    color: #56338a;
 }
 
 .link {

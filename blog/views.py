@@ -1,9 +1,9 @@
-from django.shortcuts import render, get_object_or_404, reverse
+from django.shortcuts import render, get_object_or_404, reverse, redirect
 from django.views import generic
 from django.views.generic import TemplateView
 from django.contrib import messages
 from django.http import HttpResponseRedirect
-from .models import Post, Comment
+from .models import Post, Comment, Like
 from .forms import CommentForm
 
 # Create your views here.
@@ -92,3 +92,12 @@ def comment_delete(request, slug, comment_id):
         messages.add_message(request, messages.ERROR, 'You can only delete your own comments!')
 
     return HttpResponseRedirect(reverse('post_detail', args=[slug]))
+
+def toggle_like(request, post_id):
+    post = get_object_or_404(Post, id=post_id)
+    like, created = Like.objects.get_or_create(user=request.user, post=post,)
+
+    if not created:
+        like.delete()
+    
+    return redirect('post_detail')
