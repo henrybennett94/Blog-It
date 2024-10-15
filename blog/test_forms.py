@@ -1,7 +1,6 @@
 from django.test import TestCase
 from .forms import CommentForm
 
-
 class TestCommentForm(TestCase):
 
     def test_form_is_valid(self):
