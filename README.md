@@ -91,45 +91,40 @@ Cloudinary is a cloud-based service that provides powerful tools for managing, o
   - The deployed link can be found at: (https://blog-it-app-f2464249567c.herokuapp.com/)
 
 ---
-## Testing (Actually Features)
+## Features
+### Features implemented:
+- Overview of posts
+  user is redirected to a display of all posts with previews of content, paginated by six posts per page.
+- Viewing posts in detail
+  Site user selects a post title to open a display of the post with any comments.
+- Create an account to comment on posts
+- Authenticated users can comment on posts, and have full CRUD management of their own comments
+  Only logged in users can Submit, Edit, and Delete comments on posts. In case of non-authenticated site visitor 
+  browsing a post, 'Log in to leave a comment' message displays above the page footer, in place of 'Leave a 
+  Comment' form.
+  Any site user who has posted a comment has the option to edit that comment, by selecting 'Edit' under the 
+  comment in the comment section.
+  Any site user who has posted a comment has the option to delete that comment, by selecting 'Delete' under the 
+  comment in the comment section.
+- Comment approval required from site admin to publish comment
+  Site admin can approve comments submitted from logged-in users, so the comment becomes visible to all site     
+  visitors.
+- Datetime for posts, comments and all updates
+  Datetime is displayed for each post and comment on site: datetime of either the original posting or, if 
+  updated, datetime of the update.
+- Creating and saving of drafts (for superusers)
+  From the admin panel, admin can add a new post but not publish it, with the option to amend the content again 
+  before publishing by saving as a draft.
+- 'About' page
+- Defensive building
+  When selecting delete (of a comment, or post if admin), options are presented to confirm deletion action, or to 
+  cancel action.
 
-### Manual Testing
-#### View Posts List
-(Logged Out)
-- Expected: On opening url, user is redirected to a display of all posts with previews of content, paginated by six posts per page.
-- Testing: 'Open app' from the Heroku app.
-- Result: Redirected to display of as expected, with max six posts per page.
-- Testing: Click 'Next' to show any further posts, if more than six posts have been created.
-- Result: New page of posts and preview text displayed.
-
-(Logged In)
-- Expected: On successful log in or registration, authenticated user is redirected to a display of all posts with previews of content, paginated by six posts per page.
-- Testing: Registered as a new user via 'Register' page, completing the form action.
-- Result:  Redirected to display of as expected, with max six posts per page.
-- Testing: Logged out, and then logged in via 'Sign In' page.
-- Result:  Redirected to display of as expected, with max six posts per page.
-  
-#### Login
--  Expected: On signing in, the user is expected to see a success message 'Successfully signed in as [username]'.
--  Testing: Tested the feature by signing in as a registered user.
--  Result: The feature acted as normal and displayed success message 'Successfully signed in as admin', on the signing-in action.
-
-#### Comment on a post
-- Expected: Only logged in users can comment on a post.
-- Testing: Logged out, open a post from Home page- 'Log in to leave a comment' message is displayed under the post content. Logged in, open a post from Home page, 'Leave a comment' section is displayed beneath the content, with a Text-Input field. Type comment in the Text-Input field and click 'Submit'.
-- Result: Faded out comment is displayed to the left, but only visible to the comment's author, with admin approval required to make the comment visible to all site visitors.
-- Step required to complete action: Log in as admin, go to admin panel and approve comment.
-- Further action required: Implement logic to remove requirement for admin approval for all users posting comments, so the above step will not have to be necessary.
-
-#### Approve comments
-- Expected: Site admin can approve comments submitted from logged-in users, so the comment becomes visible to all site visitors.
-- Testing: Log in as admin and go to /admin/blog/comment/. Open comment to approve. Check 'Approved' box and select 'SAVE'. Navigate back to post on which was commented.
-- Result: Comment is visible, with timestamp, and Delete/Edit options.
-
-#### Open a post
-- Expected: Site user selects a post title to open a display of the post with any comments.
-- Testing: From Home page, click a post (text of targeted post-title and preview highlights when cursor hovers over it).
-- Result: Redirection to page displaying the content of the selected post, with timestamps, author, commments displayed additionally.
+### Features to implement for future iterations:
+- 'Like' button
+### Possible revisions
+- Comment approval required
+  Implement logic to remove requirement for admin approval for all users posting comments.
 
 #### Create drafts
 - Expected: From the admin panel, admin can add a new post but not publish it, with the option to amend the content again before publishing by saving as a draft.
@@ -148,22 +143,6 @@ Cloudinary is a cloud-based service that provides powerful tools for managing, o
 - Testing: Delete: From admin panel, navigate to /admin/blog/post/. Select a published post to open it. With the post open for editing as per previous step, scroll down to 'Delete' button and select.
 - Result: Delete: Redirected to /delete/ to confirm deletion action with 'Yes, I'm sure', or cancel action with 'No, take me back'.
 
-#### Comment deletion
-- Expected: Any site user who has posted a comment has the option to delete that comment, by selecting 'Delete' under the comment in the comment section.
-- Testing: Open a post as a logged in user. Submit a comment on post. Comment unapproved: select 'Delete' button below 'This comment is awaiting approval' message below the comment. Comment approved:  select 'Delete' button below the comment. 'Delete comment?' modal is prompted in both cases. Select 'Delete' on modal.
-- Result: Comment is deleted from the post page, with 'Comment deleted!' success  message displayed at the screen top.
-
-#### Comment editing
-- Expected: Any site user who has posted a comment has the option to edit that comment, by selecting 'Edit' under the comment in the comment section.
-- Testing: Open a post as a logged in user. Submit a comment on post. Comment unapproved: select 'Edit' button below 'This comment is awaiting approval' message below the comment. Comment approved:  select 'Edit' button below the comment. Input field refreshes pupulated with the text of comment- amend accordingly and select 'Update' in place of the 'Submit' button.
-- Result: Comment is updated with changes and visibly displays, 'Leave a comment:' section refreshes to be empty, with 'Submit' button as before to be able to create a new comment. 'Comment updated!' success message displayed at the screen top.
-
-#### Defensive building
-- Expected: When selecting delete (of a comment, or post if admin), options are presented to confirm deletion action, or to cancel action.
-- Testing: Comments: Click 'Delete' button to prompt 'Delete comment?' modal. In modal, select 'Close' to cancel action.
-- Result: Comments: Action is canceled, user returns to post page with their comment still there, unmodified.
-- Testing: Posts: Logged in as admin, go to admin/blog/post/ and open a post. Scroll down and select 'Delete'. Redirected to blog/post/23/delete/, page which gives options 'Yes, I'm sure' or 'No, take me back'. Select 'No, take me back'.
-- Result: Posts: Action is canceled, admin is returned to blog/post/23/change/. On viewing posts in admin panel, all posts are present with no change from the view before, and the same on viewing posts on Home page as any site user.
 ---
 ## Testing
 
@@ -229,7 +208,10 @@ Cloudinary is a cloud-based service that provides powerful tools for managing, o
 (II) Sign Out
 - Expected: When logged in, selecting 'Logout' from navbar redirects to user to be prompted to confirm action.
 
-#### Logged In/Logged Out differences
+#### Protection for authenticated users
+- Expected: Only logged in users can Submit, Edit, and Delete comments on posts. In case of non-authenticated site visitor browsing a post, 'Log in to leave a comment' message displays above the page footer, in place of 'Leave a Comment' form.
+- Testing: Log out and navigate to Homepage. Open a post.
+- Result: No functionality to enable leaving a comment if not logged in. 'Log in to leave a comment' message displayed above footer and to right of list of comments. No Edit or Delet buttons for non-authenticated user to toggle.
 
 #### Password requirements
 - Expected: To complete sign up action successfully, user needs to fill in all required criteria on the sign-up form, including Username, Password, and Passowrd (again). The value for Password must conform to the specified password requirements and the value for Password (again) must be identical to Password. With all this having been met, the user successfully signs up and can continue browsing.
@@ -238,16 +220,23 @@ Cloudinary is a cloud-based service that provides powerful tools for managing, o
 - Result (II) On attempting to complete sign-up by clicking 'Submit', 'Register' page refreshes prompt messages/information for user about invalid form values (e.g., 'Please fill in this field.', 'This password is too short. It must contain at least 8 characters.', 'This password is entirely numeric.').
 
 #### Delete/Edit/Submit buttons
- Comment deletion
-- Expected: Any site user who has posted a comment has the option to delete that comment, by selecting 'Delete' under the comment in the comment section.
-- Testing: Open a post as a logged in user. Submit a comment on post. Comment unapproved: select 'Delete' button below 'This comment is awaiting approval' message below the comment. Comment approved:  select 'Delete' button below the comment. 'Delete comment?' modal is prompted in both cases. Select 'Delete' on modal.
-- Result: Comment is deleted from the post page, with 'Comment deleted!' success  message displayed at the screen top.
-
- Comment editing
-- Expected: Any site user who has posted a comment has the option to edit that comment, by selecting 'Edit' under the comment in the comment section.
-- Testing: Open a post as a logged in user. Submit a comment on post. Comment unapproved: select 'Edit' button below 'This comment is awaiting approval' message below the comment. Comment approved:  select 'Edit' button below the comment. Input field refreshes pupulated with the text of comment- amend accordingly and select 'Update' in place of the 'Submit' button.
-- Result: Comment is updated with changes and visibly displays, 'Leave a comment:' section refreshes to be empty, with 'Submit' button as before to be able to create a new comment. 'Comment updated!' success message displayed at the screen top.
-
+(I) Submit button
+- Expected: To post a comment, user moves cursor to 'Submit' button under 'Leave a comment' section after filling in field. Button highlights purple and on selection page refreshes with comment posted beneath 'Comments:' section on left.
+- Testing: Input text into Body* of Comment Form. Hover cursor over Submit and select button.
+- Result: 'Submit' button highlights purple and on selection, page refreshes with comment posted beneath 'Comments:' section on left.
+(II) Delete button
+- Expected: To delete a comment, user moves cursor to 'Delete' button underneath the comment. Button text changes colour to black on hover and, on selection, 'Delete comment?' modal is prompted.
+- Testing: Select 'Delete' underneath a comment.
+- Result: On hover, text changes to black, and on click, 'Delete comment?' modal is prompted.
+(III) Delete comment modal
+- Expected: Selecting either 'Close' or 'Delete' buttons in modal triggers action- 'Close' cancels the deletion process and refreshes page with no updates made, 'Delete' deletes the comment and refreshes page with this update shown.
+- Testing: On generating modal, select 'Close', 'X', or 'Delete'.
+- Result: 'Close' or 'X' refreshes page with no deletion update. 'Delete' removes the selected comment from the page, and also generates a success message at the top of page- 'Comment deleted!'.
+(IV) Edit button
+- Expected: To edit a comment, user moves cursor to 'Edit' button underneath the comment. Button text changes colour to black on hover and, on selection, refreshes whole page with the text of the comment selected for edit prepopulating the body field of the comment form, and 'Update' button in place of 'Submit' for the form.
+- Testing: Hover cursor over 'Edit' button and select.
+- Result: Button text changes colour to black on hover and, on selection, refreshes whole page with the text of the comment selected for edit prepopulating the body field of the comment form, and 'Update' button in place of 'Submit' for the form.
+  [] Update button (in case of Comment edit): expected, tested and result exactly as for (I) Submit button. 
 
 ### Responsiveness
 
@@ -258,5 +247,9 @@ Cloudinary is a cloud-based service that provides powerful tools for managing, o
 ### Resolved Bugs
 
 ### Known Bugs
+#### Paragraph tag bug
+- HTML validation error in that, running HTML code through W3 Schools validator for post_detail.html from logged in view, a stray <p> opening tag is encided in the post content HTML body.
+#### Comment Id bug
+- Same HTML validator throwing error with 'comment-id' attribute of <button> element.
 ---
 ## Credits
