@@ -9,4 +9,3 @@ class TestAboutView(TestCase):
         self.about_content = About(
             title="About Me", content="This is about me.")
         self.about_content.save()
-
