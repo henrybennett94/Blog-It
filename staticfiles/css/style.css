@@ -27,7 +27,6 @@ body {
 }
 
 .main-bg {
-    /*background-color: #85ddc8;*/
     background-color: #f0c78a;
 }
 
@@ -64,7 +63,8 @@ body {
     overflow: hidden;
     position: relative;
     display: inline-block;
-    height: 33vh;
+    padding: 20px;
+    height: auto;
     width: 100%;
 }
 
@@ -105,7 +105,7 @@ body {
 
 .post-title {
     margin-top: 10%;
-    margin-left: 5%;
+    padding-left: 5%;
 }
 
 .post-subtitle {

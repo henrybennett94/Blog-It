@@ -32,7 +32,8 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['8000-henrybennett94-django3-a6pk1t9i926.ws.codeinstitute-ide.net',
+ALLOWED_HOSTS = [
+    '8000-henrybennett94-django3-a6pk1t9i926.ws.codeinstitute-ide.net',
     '.herokuapp.com']
 
 
