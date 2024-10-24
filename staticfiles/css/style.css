@@ -161,3 +161,48 @@ body {
 .approval {
     color: rgb(222, 146, 168);
 }
+
+/* Media Query for tablets (up to 768px wide) */
+@media (max-width: 768px) {
+    .masthead {
+        height: auto;
+        padding: 20px 10px;
+    }
+    .post-title {
+        margin-top: 5%;
+    }
+    .masthead-text {
+        padding: 10px;
+    }
+    .btn-signup,
+    .btn-edit {
+        width: 100%;
+    }
+}
+
+/* Media Query for smartphones (up to 480px wide) */
+@media (max-width: 480px) {
+    .brand {
+        font-size: 1.2rem;
+    }
+    .post-title {
+        font-size: 1.5rem;
+        margin-top: 5%;
+    }
+    .post-subtitle {
+        margin-left: 2%;
+    }
+    .masthead {
+        height: auto;
+    }
+    .masthead-text {
+        padding: 10px;
+    }
+    .btn-signup,
+    .btn-edit {
+        width: 100%;
+    }
+    .card-text {
+        padding: 10px;
+    }
+}
