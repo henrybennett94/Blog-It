@@ -1,5 +1,7 @@
 # Blog It!
 
+<img src="staticfiles/images/readme_images/responsive_images/macbookair.png" alt="Desktop View">
+
 Deployment link: (https://blog-it-app-f2464249567c.herokuapp.com/)
 
 Github Repository: (https://github.com/henrybennett94/Blog-It)
@@ -10,10 +12,13 @@ Welcome to Blog It! Whether you're a seasoned collector or simply curious about 
 
 - [Introduction](#introduction)
 - [UX Design](#ux-design)
-- [Development](#development)
+- [Agile Development](#agile-development)
 - [Technology Used](#technology-used)
 - [Deployment](#deployment)
+- [Features](#features)
+- [Testing](#testing)
 - [Credits](#credits) 
+------
 
 ## Introduction
 
@@ -23,39 +28,64 @@ Blog It! is a Django web application, intended to give users a streamlined platf
 
 ## UX Design
 
-This application was designed using Balsamiq to create wireframes. The method of the design was to conform to user stories.
-
 ### MVP
 
-The MVP provides users with an interest in the subject, though anyone is welcome to join, with an application they can quickly sign up with, and then use to create and read about interesting facts and stories related to different historical antiques, with the option to comment on other account-holders' posts, and delete and edit these posts.
-
+The MVP provides users with an interest in the subject, though anyone is welcome to join, with an application they can quickly sign up with, and then use to create and read about interesting facts and stories related to different historical antiques, with the option to comment on other account-holders' posts, and delete and edit these comments.
 
 ### User Stories for Blog It!:
 
-- As a site user I can view a paginated list of posts so that I can select which post I want to view.
-- As a site user I can access my user account through a login form requiring a password so that my account's security is maintained.
-- As a site user I can create a user account with a username and password so that access to how I use the site is private to me and protected.
-- As a site user I can get asked to confirm that I wish to delete a feature, after selecting a delete option so that the risk of accidentally deleting something is minimised.
-- As a site user I can leave comments on a post so that I can be involved in the conversation
-- As a site admin I can approve or disapprove comments so that I can filter out objectionable comments
-- As a site user or admin I can view comments on an individual post so that I can read the conversation
-- As a site user or admin I can view comments on an individual post so that I can read the conversation
-- As a site user I can have the option to delete my posts and comments that I no longer need there so that I can keep my user space organised, updated and relevant.
-- As a site user I can click on a post so that I can read the full text
-- As a site admin I can create draft posts so that I can finish writing the content later
-- As a site admin I can create, read, update and delete posts so that I can manage my blog content
-- As a site user I can like others' posts so that I can show appreciation for other site users' content.
+1. As a site user I can view a paginated list of posts so that I can select which post I want to view.
+2. As a site user I can access my user account through a login form requiring a password so that my account's security is maintained.
+3. As a site user I can create a user account with a username and password so that access to how I use the site is private to me and protected.
+4. As a site user I can get asked to confirm that I wish to delete a feature, after selecting a delete option so that the risk of accidentally deleting something is minimised.
+5. As a site user I can leave comments on a post so that I can be involved in the conversation.
+6. As a site admin I can approve or disapprove comments so that I can filter out objectionable comments.
+7. As a site user or admin I can view comments on an individual post so that I can read the conversation.
+8. As a site user I can have the option to delete my posts and comments that I no longer need there so that I can keep my user space organised, updated and relevant.
+9. As a site user I can click on a post so that I can read the full text.
+10. As a site admin I can create draft posts so that I can finish writing the content later.
+11. As a site admin I can create, read, update and delete posts so that I can manage my blog content.
+12. As a site user I can like others' posts so that I can show appreciation for other site users' content.
 
+This application was designed using Balsamiq to create wireframes. The method of the design was to conform to user stories.
+
+### Project Wireframes
+
+<img src="staticfiles/images/readme_images/wireframes/posts-wireframe.png" alt="Posts Wireframe" width="400" height="250"> <img src="staticfiles/images/readme_images/wireframes/post-detail-wireframe.png" alt="Post Detail Wireframe" width="400" height="250"> 
+<img src="staticfiles/images/readme_images/wireframes/about-wireframe.png" alt="About Wireframe" width="550" height="300">
 
 ------
 
-## Development
+## Agile Development
 
-The project was developed using Agile Methodology. User stories were mapped to a Github Projects project board to chart development progress, with three sections: 'To Do'- the backlog, 'In Progress', and 'Done'. 
+The project was developed using Agile Methodology. User stories were mapped to a Github Projects project board to chart development progress, with four sections: 'To Do'- the backlog, 'In Progress'- initial developments, 'Bugs'- for mapping bugs encountered during testing, and 'Done'- to mark the story as completed. User Stories were also mapped to Issues, listed in the 'Issues' tab in the Github repository, and assigned between three milestones: 'Blog Posts', 'User Authentication', and 'User CRUD'. A fourth milestone, 'Future Features' exists for User Stories that were assigned 'Won't' in MoSCoW prioritisation, but can be developed in future iterations.
 
 ### Link to Project Board
 
 https://github.com/users/henrybennett94/projects/7
+
+Project Board
+
+<img src="staticfiles/images/readme_images/project-board.png/" alt="Project board">
+
+### MoSCoW 
+
+User stories were worked on according to a MoSCoW prioritisation system, assigning four labels ('Must', 'Should', 'Could', 'Won't') to each story to be able to work towards achieving the MVP for this iteration.
+
+| User Story | MoSCoW | Milestone |
+| ---------- | ------ | --------- |
+| 1          | Must   | Blog Posts|
+| 2          | Must   | User Auth |
+| 3          | Must   | User Auth |
+| 4          | Should | User CRUD |
+| 5          | Must   | User CRUD |
+| 6          | Could  | Blog Posts|
+| 7          | Must   | User CRUD |
+| 8          | Must   | User CRUD |
+| 9          | Must   | User CRUD |
+| 10         | Could  | Blog Posts|
+| 11         | Must   | Blog Posts|
+| 12         | Won't  | Future Features |
 
 ------
 
@@ -75,7 +105,7 @@ Django is a Python web framework ideal for projects due to its robust scalabilit
 ### Cloudinary
 Cloudinary is a cloud-based service that provides powerful tools for managing, optimizing, and delivering images and videos in web and mobile applications. Offering seamless media management and optimized delivery, it is an expedient tool for storing media in a Django application.
 
----
+------
 ## Deployment
 
 - The site was deployed to Heroku. The steps to deploy are as follows: 
@@ -90,35 +120,56 @@ Cloudinary is a cloud-based service that provides powerful tools for managing, o
   - Select "View" on completion of build
   - The deployed link can be found at: (https://blog-it-app-f2464249567c.herokuapp.com/)
 
----
+------
 ## Features
+
 ### Features implemented:
-- Overview of posts
-  user is redirected to a display of all posts with previews of content, paginated by six posts per page.
-- Viewing posts in detail
-  Site user selects a post title to open a display of the post with any comments.
-- Create an account to comment on posts
-- Authenticated users can comment on posts, and have full CRUD management of their own comments
-  Only logged in users can Submit, Edit, and Delete comments on posts. In case of non-authenticated site visitor 
-  browsing a post, 'Log in to leave a comment' message displays above the page footer, in place of 'Leave a 
-  Comment' form.
-  Any site user who has posted a comment has the option to edit that comment, by selecting 'Edit' under the 
-  comment in the comment section.
-  Any site user who has posted a comment has the option to delete that comment, by selecting 'Delete' under the 
-  comment in the comment section.
-- Comment approval required from site admin to publish comment
-  Site admin can approve comments submitted from logged-in users, so the comment becomes visible to all site     
-  visitors.
-- Datetime for posts, comments and all updates
-  Datetime is displayed for each post and comment on site: datetime of either the original posting or, if 
-  updated, datetime of the update.
-- Creating and saving of drafts (for superusers)
-  From the admin panel, admin can add a new post but not publish it, with the option to amend the content again 
-  before publishing by saving as a draft.
-- 'About' page
-- Defensive building
-  When selecting delete (of a comment, or post if admin), options are presented to confirm deletion action, or to 
-  cancel action.
+
+#### Overview of posts
+  
+  <img src="staticfiles/images/readme_images/posts-overview1.png" alt="Posts Overview Page 1" width="500" height="250">
+  
+  <img src="staticfiles/images/readme_images/posts-overview2.png" alt="Posts Overview Page 2" width="500" height="250">
+
+#### View Post Details
+Users can select a post title to view the full content, including any comments associated with the post.
+
+  <img src="staticfiles/images/readme_images/post-detail.png" alt="View Post Details" width="600" height="300">
+
+#### User Authentication for Commenting
+- Registered users can comment on posts and have full control over their comments, including the ability to create, edit, and delete them.
+
+  <img src="staticfiles/images/readme_images/comment1.png" alt="Comment" width="500" height="250">
+
+- For non-authenticated users, a prompt to log in will replace the comment form, encouraging them to sign in to leave a comment.
+- Users who have posted a comment can edit or delete their comment by selecting the respective options beneath the comment.
+- All comments submitted by logged-in users require approval from the site administrator before becoming publicly visible.
+
+  <img src="staticfiles/images/readme_images/commentapproval.png" alt="Comment approved" width="600" height="350">
+
+#### Timestamps for Posts and Comments
+Every post and comment includes a timestamp that reflects either the original post time or the last updated time, ensuring transparency in content updates.
+
+ <img src="staticfiles/images/readme_images/datetime-comments.png" alt="Comments timestamp" width="550" height="300"> <img src="staticfiles/images/readme_images/datetime-posts.png" alt="Posts timestamp" width="250" height="360">
+
+#### Draft Creation for Superusers
+Superusers can create new posts and save them as drafts via the admin panel. This allows them to review and revise content before making it publicly available.
+
+#### Manage posts
+- Expected: Site admin can, in the admin panel, create, update, read and delete posts, with changes reflected in the public website.
+
+<img src="staticfiles/images/readme_images/drafts.png" alt="Create drafts" width="500" height="300">
+<img src="staticfiles/images/readme_images/manageposts.png" alt="Manage posts" width="500" height="300">
+
+#### 'About' Page
+The site includes an 'About' page accessible from the homepage, providing users with information about the site's purpose and goals.
+
+<img src="staticfiles/images/readme_images/nav2.png" alt="Navigation Links Picture 2" width="500" height="300">
+
+#### Defensive Actions for Deletions
+Before deleting a comment or post (for administrators), users are prompted to confirm or cancel the deletion, preventing accidental removal of content.
+
+<img src="staticfiles/images/readme_images/delete-confirm.png" alt="Confirm Delete" width="500" height="300">
 
 ### Features to implement for future iterations:
 - 'Like' button
@@ -126,130 +177,250 @@ Cloudinary is a cloud-based service that provides powerful tools for managing, o
 - Comment approval required
   Implement logic to remove requirement for admin approval for all users posting comments.
 
-#### Create drafts
-- Expected: From the admin panel, admin can add a new post but not publish it, with the option to amend the content again before publishing by saving as a draft.
-- Testing: From the admin  panel, navigate to /blog/posts section, and select '+Add'. Fill in form fields to create a post. Check value for 'Status:' field is set to 'Draft'. Select SAVE.
-- Result: Redirected to /admin/blog/post, where 'Test draft post' is listed first, with status of 'Draft'.
-- Result: On returning to Home page, 'Test draft post' is not listed among the published posts accessible from Home. But 'Draft' status means it can be accessed from Admin panel to be amended at a later date.
-
-#### Manage posts
-- Expected: Site admin can, in the admin panel, create, update, read and delete posts, with changes reflected in the public website.
-- Testing: Create: From the admin  panel, navigate to /blog/posts section, and select '+Add'. Fill in form fields to create a post. Check value for 'Status:' field is set to 'Published'. Select SAVE.
-- Result: Create: New post is displayed on Home page.
-- Testing: Read: From Home, click new post to open it. 
-- Result: Read: Redirected to /newpost/, with all published content of the post displayed to user.
-- Testing: Update: From admin panel, navigate to /admin/blog/post/. Select a published post to open it. In all fields, change values to modify the data, then click 'SAVE'.
-- Result: Update: On opening the modified post from the Home page next, the associated data has changed.
-- Testing: Delete: From admin panel, navigate to /admin/blog/post/. Select a published post to open it. With the post open for editing as per previous step, scroll down to 'Delete' button and select.
-- Result: Delete: Redirected to /delete/ to confirm deletion action with 'Yes, I'm sure', or cancel action with 'No, take me back'.
-
----
+------
 ## Testing
+
+### Responsivity
+
+I used Google Chrome Responsive Viewer Extension to test responsivity across a range of devices. Sample mockups of the application in desktop, tablet, and smartphone view:
+
+#### Desktop View
+
+<img src="staticfiles/images/readme_images/responsive_images/macbookair.png" alt="Desktop View">
+
+#### Tablet View, Smartphone View
+
+<img src="staticfiles/images/readme_images/responsive_images/iPadpro.png" alt="Tablet View" width="325" height="450"> <img src="staticfiles/images/readme_images/responsive_images/galaxy-a50.png" alt="Smartphone View" width="213" height="450">
+
+### Code Validation
+
+#### HTML
+I ran the HTML source code from the deployed site through the W3 HTML Validator.
+
+<img src="staticfiles/images/readme_images/validation_images/html-validation.png" alt="HTML Valid" width="500" height="250">
+
+I ran my CSS script through the Jigsaw W3C CSS Validation Service.
+
+<img src="staticfiles/images/readme_images/validation_images/css-validation.png" alt="CSS Valid" width="500" height="250">
+
+I ran all my Python scripts through the CI Python Linter, and resolved any issues so that it meets Pep8 standards.
+
+<img src="staticfiles/images/readme_images/validation_images/python-validation.png" alt="Python Valid" width="500" height="250">
 
 ### Manual Testing
 
 #### Navigation Links
-- Expected: Link to separate pages of website anchored in the navigation menu, so user is redirected to each page on selecting the title.
-- Testing: Move cursor over the titles ('Home', 'About', 'Register', 'Login'), which transition from grey to bold when hovered on (excepting current page which is always bold). Selecting title redirects page.
-- Result: User redirected to urls:
+- Expected: Navigation links in the menu should redirect users to the corresponding pages (Home, About, Register, Login) when clicked. When hovering over these links, they should change from grey to bold, except for the current page, which is always bold.
+
+- Testing Method: Hovered over the navigation titles ('Home', 'About', 'Register', 'Login'). Verified that titles changed from grey to bold on hover, with the exception of the current page. Clicked on the links to check redirection.
+  
+- Result: •	Result: Users were successfully redirected to the following URLs:
+
   - https://blog-it-app-f2464249567c.herokuapp.com/ 'Home'
   - https://blog-it-app-f2464249567c.herokuapp.com/about/ 'About'
   - https://blog-it-app-f2464249567c.herokuapp.com/accounts/signup/ 'Register'
   - https://blog-it-app-f2464249567c.herokuapp.com/accounts/login/ 'Login'
   on completing above action.
 
-#### Hover Functionality (text highlighting)
-- Expected: Hovering cursor over post titles and preview text highlights all content to indicate an anchored link to the full content for user.
-- Testing: Hover cursor over posts.
-- Result: Text highlights to indicate link.
-#### Links to posts
-- Expected: Selecting posts titles and previews from list on homepage redirects to full content of post.
-- Testing: Hover cursor over post title and select.
-- Result: User redirected to page of full content for post (url- https://blog-it-app-f2464249567c.herokuapp.com/ [post-title]).
-  
-#### Datetime functionality of posts/updates
-- Expected: Datetime is displayed for each post and comment on site: datetime of either the original posting or, if updated, datetime of the update.
-- Testing: Datetime of original:
-  - For a post- navigate to admin panel and create a new post (https://blog-it-app-f2464249567c.herokuapp.com/admin/blog/post/add/), fill in form fields and publish.
-  - Navigate to 'VIEW SITE' to return to Home page.
-- Result: New post created with timestamp dsiplayed, both on Home page and on 'post-detail' page.
-  - To test the same functionality for comments- fill in the comment form on post detail page and select 'Submit'. Approve comment from the admin panel (in keeping with User Story #6). Refresh 'post-detail' and see timestamp of comment displayed.
-- Testing: Datetime of update:
-  - Either update a comment by opening a post, navigate to comment section and select 'Edit' underneath a comment, or update a post by navigating to admin panel and
-    
-#### Next/Previous and pagination
-- Expected: Homepage url- always displays a maximum of 6 posts per page- click 'NEXT'/'PREVIOUS buttons to move through posts and access posts that don't fit on the primary display. Functionality in place that only 'NEXT' button for displaying of  6 most recent posts, only 'PREV' button for displaying of <7 earliest posts, and both 'NEXT'/'PREV' options for all intermediate displays.
-- Testing:
-  (I) Open Homepage (https://blog-it-app-f2464249567c.herokuapp.com/?page=1), most recent 6 posts displayed first. Select 'NEXT >>' button at bottom of page.
-  (II) If on url https://blog-it-app-f2464249567c.herokuapp.com/?page=2 - select 'NEXT >>' button at bottom of page.
-  (III)  If on url https://blog-it-app-f2464249567c.herokuapp.com/?page=2 - select '<< PREV' button at bottom of page.
-  (IV) If on url https://blog-it-app-f2464249567c.herokuapp.com/?page=3 - select '<< PREV' button at bottom of page.
+<img src="staticfiles/images/readme_images/nav1.png" alt="Navigation Links Picture 1" width="400" height="200"> <img src="staticfiles/images/readme_images/nav2.png" alt="Navigation Links Picture 2" width="400" height="200">
 
-- Result:
+#### Hover Functionality (text highlighting)
+- Expected: Hovering over post titles and preview text should highlight the content, indicating a clickable link to the full post.
+
+- Testing Method: Hovered over post titles and preview text on the homepage.
+
+- Result: The text was highlighted as expected, indicating that it is linked to the full post content.
+
+
+<img src="staticfiles/images/readme_images/hover1.png" alt="On-hover Picture 1" width="400" height="200">
+<img src="staticfiles/images/readme_images/hover2.png" alt="On-hover Picture 2" width="400" height="200">
+
+#### Links to posts
+- Expected: : Clicking on post titles or preview text should redirect users to the full post content.
+
+- Testing Method: Clicked on various post titles from the homepage.
+
+- Result: Users were successfully redirected to the full content of the posts (URL format: https://blog-it-app-f2464249567c.herokuapp.com/[post-title]).
+
+<img src="staticfiles/images/readme_images/links1.png" alt="Links to posts test Picture 1" width="400" height= "200">
+<img src="staticfiles/images/readme_images/links2.png" alt="Links to posts test Picture 2" width="400" height="200">
+  
+#### Next/Previous and pagination
+- Expected: A maximum of 6 posts should be displayed per page. Users should be able to navigate between pages using "NEXT" and "PREV" buttons.
+
+- Testing Method:
+  1.	Visited the homepage (https://blog-it-app-f2464249567c.herokuapp.com/?page=1) and clicked the "NEXT >>" button.
+
+  <img src="staticfiles/images/readme_images/pagination1.png" alt="Next Button">
+  
+  2.	Repeated the process for different pages.
+
+  <img src="staticfiles/images/readme_images/pagination2.png" alt="Next and Previous Button" width="400" height="200"> <img src="staticfiles/images/readme_images/pagination3.png" alt="Previous Button" width="400" height="200">
+
+  <img src="staticfiles/images/readme_images/pagination4.png" alt="Middle page">
+
+
+- Result: Pagination worked as expected.
+- Redirected to the correct pages based on the selection.
+
   (I) Redirected to url https://blog-it-app-f2464249567c.herokuapp.com/?page=2 - as expected
   (II) Redirected to url https://blog-it-app-f2464249567c.herokuapp.com/?page=3 - as expected
   (III) Redirected to url https://blog-it-app-f2464249567c.herokuapp.com/?page=1 - as expected
   (IV) Redirected to url https://blog-it-app-f2464249567c.herokuapp.com/?page=2 - as expected
   
 #### Sign Up/Sign In buttons and Success messages/failure prompts
-- Expected: On clicking 'Sign In' (Login page) or 'Sign Up >>' (Register page) after filling in the required forms correctly, user is redirected to homepage where success messages are displayed.
-- Testing:
-  (I) Register- Fill in all required form fields conforming to specifications given on page (ie., password instructions), and select 'Sign Up>>'
-  (II) Login- Fill in all required form fields, and select 'Sign In'.
-- Result: For both cases (I) and (II), user is, after completing form action, redirected to Homepage where success messages 'Successfully signed in as [username].' and 'You are logged in as [username]' are displayed.
+- Expected: After successfully registering or signing in, users should be redirected to the homepage, with appropriate success messages displayed.
+
+- Testing Method:
+  1. Registered a new user, filling in the required form fields and clicked "Sign Up."
+
+    <img src="staticfiles/images/readme_images/createaccount1.png" alt="Sign Up Page">
+
+  2. Logged in with the new credentials.
+    
+- Result: For both actions, the user was redirected to the homepage with success messages ("Successfully signed in as [username]" and "You are logged in as [username]") displayed.
+
+  <img src="staticfiles/images/readme_images/createaccount2.png" alt="Sign Up/Sign In successful">
 
 #### Defensive functionality- Sign Out and Deletion
 (I) Deletion
-- Expected: When selecting delete (of a comment, or post if admin), options are presented to confirm deletion action, or to cancel action.
-- Testing: Comments: Click 'Delete' button to prompt 'Delete comment?' modal. In modal, select 'Close' to cancel action.
-- Result: Comments: Action is canceled, user returns to post page with their comment still there, unmodified.
-- Testing: Posts: Logged in as admin, go to admin/blog/post/ and open a post. Scroll down and select 'Delete'. Redirected to blog/post/23/delete/, page which gives options 'Yes, I'm sure' or 'No, take me back'. Select 'No, take me back'.
-- Result: Posts: Action is canceled, admin is returned to blog/post/23/change/. On viewing posts in admin panel, all posts are present with no change from the view before, and the same on viewing posts on Home page as any site user.
+- Expected: Upon clicking "Delete" for a comment or post (as admin), users should be prompted to confirm or cancel the deletion.
+
+- Testing Method
+1. Tested deletion of a comment by selecting "Delete" and cancelling in the modal.
+2. Tested deletion of a post as admin and cancelled the action.
+ 
+  <img src="staticfiles/images/readme_images/delete-options1.png" alt="Select delete" width="400" height="200"> <img src="staticfiles/images/readme_images/delete-options-delete.png" alt="Confirm delete" width="400" height="200">
+
+- Result: Both actions were cancelled as expected, with no changes to the content. !
+
+<img src="staticfiles/images/readme_images/deleted.png" alt="Deleted">
+  
 (II) Sign Out
-- Expected: When logged in, selecting 'Logout' from navbar redirects to user to be prompted to confirm action.
+- Expected: When a user logs out, they should be redirected to a confirmation prompt before signing out.
+- Testing Method: Logged out from the navigation bar.
+- Result: The user was successfully logged out, and a confirmation prompt was displayed.
+
+<img src="staticfiles/images/readme_images/signout.png" alt="Confirm sign out">
+<img src="staticfiles/images/readme_images/signout2.png" alt="Successful sign out">
 
 #### Protection for authenticated users
-- Expected: Only logged in users can Submit, Edit, and Delete comments on posts. In case of non-authenticated site visitor browsing a post, 'Log in to leave a comment' message displays above the page footer, in place of 'Leave a Comment' form.
-- Testing: Log out and navigate to Homepage. Open a post.
-- Result: No functionality to enable leaving a comment if not logged in. 'Log in to leave a comment' message displayed above footer and to right of list of comments. No Edit or Delet buttons for non-authenticated user to toggle.
+- Expected: Only authenticated users should be able to submit, edit, or delete comments. Non-authenticated visitors should see a "Log in to leave a comment" message instead.
+- Testing Method: Logged out and attempted to comment on a post.
+- Result: Non-authenticated users were unable to leave comments, and the "Log in to leave a comment" message was displayed.
+
+<img src="staticfiles/images/readme_images/notloggedin.png" alt="Not logged in">
 
 #### Password requirements
-- Expected: To complete sign up action successfully, user needs to fill in all required criteria on the sign-up form, including Username, Password, and Passowrd (again). The value for Password must conform to the specified password requirements and the value for Password (again) must be identical to Password. With all this having been met, the user successfully signs up and can continue browsing.
-- Testing: (I) Tested filling in the fields on the sign-up form on the Register page. Username, Password, conforming to specified requirements, and Password (again), identical value to Password. (II) Also tested that specified requirements are upheld by the programming, by filling in intentionally invalid values to fields (e.g. password <8 characters, entirely numeric, entering value for Password (again) that is not equal to value entered in Password, left some required fields blank and tried to complete action).
-- Result (I) User sign-up action successfully completed, redirect straight to Home page, with personalised success message ('Successfully signed in as [username]') displayed.
-- Result (II) On attempting to complete sign-up by clicking 'Submit', 'Register' page refreshes prompt messages/information for user about invalid form values (e.g., 'Please fill in this field.', 'This password is too short. It must contain at least 8 characters.', 'This password is entirely numeric.').
+- Expected: Users must meet the specified password requirements when signing up. Both password fields must match for successful registration.
+- Testing Method: Tested both valid and invalid inputs (e.g., weak passwords, mismatched password fields).
 
-#### Delete/Edit/Submit buttons
-(I) Submit button
-- Expected: To post a comment, user moves cursor to 'Submit' button under 'Leave a comment' section after filling in field. Button highlights purple and on selection page refreshes with comment posted beneath 'Comments:' section on left.
-- Testing: Input text into Body* of Comment Form. Hover cursor over Submit and select button.
-- Result: 'Submit' button highlights purple and on selection, page refreshes with comment posted beneath 'Comments:' section on left.
-(II) Delete button
-- Expected: To delete a comment, user moves cursor to 'Delete' button underneath the comment. Button text changes colour to black on hover and, on selection, 'Delete comment?' modal is prompted.
-- Testing: Select 'Delete' underneath a comment.
-- Result: On hover, text changes to black, and on click, 'Delete comment?' modal is prompted.
-(III) Delete comment modal
-- Expected: Selecting either 'Close' or 'Delete' buttons in modal triggers action- 'Close' cancels the deletion process and refreshes page with no updates made, 'Delete' deletes the comment and refreshes page with this update shown.
-- Testing: On generating modal, select 'Close', 'X', or 'Delete'.
-- Result: 'Close' or 'X' refreshes page with no deletion update. 'Delete' removes the selected comment from the page, and also generates a success message at the top of page- 'Comment deleted!'.
-(IV) Edit button
-- Expected: To edit a comment, user moves cursor to 'Edit' button underneath the comment. Button text changes colour to black on hover and, on selection, refreshes whole page with the text of the comment selected for edit prepopulating the body field of the comment form, and 'Update' button in place of 'Submit' for the form.
-- Testing: Hover cursor over 'Edit' button and select.
-- Result: Button text changes colour to black on hover and, on selection, refreshes whole page with the text of the comment selected for edit prepopulating the body field of the comment form, and 'Update' button in place of 'Submit' for the form.
-  [] Update button (in case of Comment edit): expected, tested and result exactly as for (I) Submit button. 
+<img src="staticfiles/images/readme_images/password-requirements.png" alt="Password requirements">
 
-### Responsiveness
+- Result: Valid inputs resulted in successful registration, while invalid inputs prompted error messages.
 
-### Code Validation
+ <img src="staticfiles/images/readme_images/createaccount2.png" alt="Sign Up/Sign In successful">
 
-### Features Testing
+#### Button Functionality
+(I) Submit Button
+- Expected: After entering a comment and clicking "Submit," the comment should be posted, and the page should refresh with the new comment displayed.
+- Testing Method: Filled in the comment form and clicked "Submit."
+- Result: The page refreshed, and the comment was displayed below the post as expected.
+
+ <img src="staticfiles/images/readme_images/submit_button/submit1.png" alt="Prepare to submit comment">
+ <img src="staticfiles/images/readme_images/submit_button/submit2.png" alt="Comment submitted">
+
+(II) Delete Button
+- Expected: Clicking "Delete" should prompt a modal asking for confirmation.
+- Testing Method: Clicked "Delete" beneath a comment.
+- Result: The modal appeared, and the comment was successfully deleted upon confirmation.
+  See [Defensive functionality- Sign Out and Deletion](defensive-functionality-sign-out-and-deletion) for visual.
+
+(III) Edit Button
+- Expected: Clicking "Edit" should prepopulate the comment form with the comment text and replace the "Submit" button with an "Update" button.
+- Testing Method: Clicked "Edit" beneath a comment.
+- Result: The form was prepopulated with the comment text, and the "Update" button replaced the "Submit" button.
+
+ <img src="staticfiles/images/readme_images/edit_button/edit1.png" alt="Select comment to edit">
+ <img src="staticfiles/images/readme_images/edit_button/edit2.png" alt="Update comment">
+ <img src="staticfiles/images/readme_images/edit_button/edit3.png" alt="Comment updated">
+
+### Unit Testing
+The project includes a suite of unit tests to ensure the functionality of key features, specifically related to blog post details and the comment system. Below is an overview of the provided unit tests:
+
+Test Files
+test_views.py: Contains tests for the blog views, including rendering of post details and comment submission.
+test_forms.py: Contains tests for the comment form validation.
+Blog Views Unit Tests (test_views.py)
+test_render_post_detail_page_with_comment_form:
+
+Verifies that the blog post detail page renders correctly.
+Ensures that the response contains the correct post title, content, and that a CommentForm instance is passed into the context.
+test_successful_comment_submission:
+
+Tests the process of submitting a comment.
+Simulates a logged-in user posting a comment on a blog post.
+Verifies that the comment submission is successful and that the response indicates the comment is awaiting approval.
+Comment Form Unit Tests (test_forms.py)
+test_form_is_valid:
+
+Tests whether the CommentForm is valid when provided with a valid comment body.
+Ensures the form passes validation.
+test_form_is_invalid:
+
+Tests the CommentForm when an empty comment body is submitted.
+Verifies that the form is invalid, ensuring proper validation is enforced.
+Running the Tests
+To run the unit tests, use the following command:
+
+python manage.py test
+
+This will execute all the tests and provide feedback on any failures or issues.
+
+Below is an overview of the provided unit test for the About view:
+
+Test Files
+test_views.py: Contains a test for the "About Me" page, ensuring it renders correctly and displays the appropriate content.
+About View Unit Test (test_views.py)
+test_about_view:
+Purpose: Ensures that the "About Me" page is created and displayed properly.
+Setup: The setUp method creates an About instance with sample content.
+Test Case: This test will validate that the "About Me" content, once saved, can be properly retrieved and displayed on the relevant page.
+Running the Tests
+To run this test along with others, use the following command:
+
+python manage.py test
+
+This will run all tests, including those for the "About Me" page, and report any issues.
+
+Key Test Observations:
+Tests involving rendering the post detail page (with comment form) passed, meaning the page loaded without issues, even when no comments were present.
+The form validation test, checking if a comment can be successfully submitted and awaiting approval, passed as expected.
+Conclusion:
+The unit tests confirm that the core features, including the post detail page, comment submission, and comment form validation, are functioning correctly. Since no tests failed, it indicates that the code is stable and free of errors based on the current test coverage.
+
+<img src="staticfiles/images/readme_images/unit-test.png" alt="Unit test results" width="400" height="108">
 
 ### Resolved Bugs
 
-### Known Bugs
+#### Comment Id bug
+
+- Same HTML validator throwing error with 'comment-id' attribute of <button> element.
+- Resolved- changed comment_id attribute to data-comment-id attribute on <button> element- comment_id not a valid attribute for <button> element.
+  
 #### Paragraph tag bug
 - HTML validation error in that, running HTML code through W3 Schools validator for post_detail.html from logged in view, a stray <p> opening tag is encided in the post content HTML body.
-#### Comment Id bug
-- Same HTML validator throwing error with 'comment-id' attribute of <button> element.
----
+- Resolved- wrapped the post content in a <div> element instead.
+
+<img src="staticfiles/images/readme_images/bugs/ptag1.png" alt="Unclosed paragraph tag">
+<img src="staticfiles/images/readme_images/bugs/ptag2.png" alt="Unclosed paragraph tag detail">
+<img src="staticfiles/images/readme_images/bugs/ptag3.png" alt="Erroneous code">
+<img src="staticfiles/images/readme_images/bugs/ptag4.png" alt="Solution- wrap in div element">
+
+### Known Bugs
+
+------
 ## Credits
+- Freepik
+- Django?
+- Bootstrap?
