@@ -87,6 +87,42 @@ User stories were worked on according to a MoSCoW prioritisation system, assigni
 | 11         | Must   | Blog Posts|
 | 12         | Won't  | Future Features |
 
+### ERD
+
+Entity Relational Diagram to demonstrate the structure of the database models.
+
+#### Post
+
+| KEY         | Entity     | Data        |
+|-------------|------------|-------------|
+| Primary     | Title      | CharField   |
+| Primary     | Slug       | SlugField   |
+| ForeignKey  | Author     | User Model  |
+| Primary     | Content    | Text        |
+| Primary     | Created On | DateTime    |
+| Primary     | Status     | Integer     |
+| Primary     | Excerpt    | Text        |
+| Primary     | Updated On | DateTime    |
+
+#### Comment
+
+| KEY         | Entity     | Data        |
+|-------------|------------|-------------|
+| ForeignKey  | Post       | Post Model  |
+| ForeignKey  | Author     | User Model  |
+| Primary     | Body       | Text        |
+| Primary     | Approved   | Boolean     |
+| Primary     | Created On | DateTime    |
+
+#### About
+
+| KEY         | Entity     | Data        |
+|-------------|------------|-------------|
+| Primary     | Title      | CharField   |
+| Primary     | Content    | Text        |
+| Primary     | Updated On | DateTime    |
+
+
 ------
 
 ## Technology used
@@ -120,6 +156,16 @@ Cloudinary is a cloud-based service that provides powerful tools for managing, o
   - Select "View" on completion of build
   - The deployed link can be found at: (https://blog-it-app-f2464249567c.herokuapp.com/)
 
+### Accessing code
+
+The application source code can be accessed at the Github repository (https://github.com/henrybennett94/Blog-It). To run the code from this repository, developers can clone the repository locally with terminal command:
+  git clone https://github.com/henrybennett94/Blog-It.git
+
+and then install dependencies by navigating to the project folder and running command:
+  pip install -r requirements.txt
+
+To contribute, developers can fork the repository, create a new branch for their feature, and submit a pull request with a clear description of your changes.
+ 
 ------
 ## Features
 
@@ -251,13 +297,13 @@ I ran all my Python scripts through the CI Python Linter, and resolved any issue
 - Testing Method:
   1.	Visited the homepage (https://blog-it-app-f2464249567c.herokuapp.com/?page=1) and clicked the "NEXT >>" button.
 
-  <img src="staticfiles/images/readme_images/pagination1.png" alt="Next Button">
+  <img src="staticfiles/images/readme_images/pagination1.png" alt="Next Button" width="600" height="362">
   
   2.	Repeated the process for different pages.
 
-  <img src="staticfiles/images/readme_images/pagination2.png" alt="Next and Previous Button" width="400" height="200"> <img src="staticfiles/images/readme_images/pagination3.png" alt="Previous Button" width="400" height="200">
-
-  <img src="staticfiles/images/readme_images/pagination4.png" alt="Middle page">
+  <img src="staticfiles/images/readme_images/pagination2.png" alt="Next and Previous Button" width="400" height="242">
+  
+  <img src="staticfiles/images/readme_images/pagination3.png" alt="Previous Button" width="284" height="172"> <img src="staticfiles/images/readme_images/pagination4.png" alt="Middle page" width="282" height="171">
 
 
 - Result: Pagination worked as expected.
@@ -274,15 +320,15 @@ I ran all my Python scripts through the CI Python Linter, and resolved any issue
 - Testing Method:
   1. Registered a new user, filling in the required form fields and clicked "Sign Up."
 
-    <img src="staticfiles/images/readme_images/createaccount1.png" alt="Sign Up Page">
+    <img src="staticfiles/images/readme_images/createaccount1.png" alt="Sign Up Page" width="717" height="387">
 
   2. Logged in with the new credentials.
     
 - Result: For both actions, the user was redirected to the homepage with success messages ("Successfully signed in as [username]" and "You are logged in as [username]") displayed.
 
-  <img src="staticfiles/images/readme_images/createaccount2.png" alt="Sign Up/Sign In successful">
+  <img src="staticfiles/images/readme_images/createaccount2.png" alt="Sign Up/Sign In successful" width="717" height="386">
 
-#### Defensive functionality- Sign Out and Deletion
+#### Defensive functionality-Sign Out and Deletion
 (I) Deletion
 - Expected: Upon clicking "Delete" for a comment or post (as admin), users should be prompted to confirm or cancel the deletion.
 
@@ -292,34 +338,33 @@ I ran all my Python scripts through the CI Python Linter, and resolved any issue
  
   <img src="staticfiles/images/readme_images/delete-options1.png" alt="Select delete" width="400" height="200"> <img src="staticfiles/images/readme_images/delete-options-delete.png" alt="Confirm delete" width="400" height="200">
 
-- Result: Both actions were cancelled as expected, with no changes to the content. !
+- Result: Both actions were cancelled as expected, with no changes to the content.
 
-<img src="staticfiles/images/readme_images/deleted.png" alt="Deleted">
+<img src="staticfiles/images/readme_images/deleted.png" alt="Deleted" width="634" height="385">
   
 (II) Sign Out
 - Expected: When a user logs out, they should be redirected to a confirmation prompt before signing out.
 - Testing Method: Logged out from the navigation bar.
 - Result: The user was successfully logged out, and a confirmation prompt was displayed.
 
-<img src="staticfiles/images/readme_images/signout.png" alt="Confirm sign out">
-<img src="staticfiles/images/readme_images/signout2.png" alt="Successful sign out">
+<img src="staticfiles/images/readme_images/signout.png" alt="Confirm sign out" width="400" height="227"> <img src="staticfiles/images/readme_images/signout2.png" alt="Successful sign out" width="400" height="226">
 
 #### Protection for authenticated users
 - Expected: Only authenticated users should be able to submit, edit, or delete comments. Non-authenticated visitors should see a "Log in to leave a comment" message instead.
 - Testing Method: Logged out and attempted to comment on a post.
 - Result: Non-authenticated users were unable to leave comments, and the "Log in to leave a comment" message was displayed.
 
-<img src="staticfiles/images/readme_images/notloggedin.png" alt="Not logged in">
+<img src="staticfiles/images/readme_images/notloggedin.png" alt="Not logged in" width="600" height="361">
 
 #### Password requirements
 - Expected: Users must meet the specified password requirements when signing up. Both password fields must match for successful registration.
 - Testing Method: Tested both valid and invalid inputs (e.g., weak passwords, mismatched password fields).
 
-<img src="staticfiles/images/readme_images/password-requirements.png" alt="Password requirements">
+<img src="staticfiles/images/readme_images/password-requirements.png" alt="Password requirements" width="600" height="364">
 
 - Result: Valid inputs resulted in successful registration, while invalid inputs prompted error messages.
 
- <img src="staticfiles/images/readme_images/createaccount2.png" alt="Sign Up/Sign In successful">
+ <img src="staticfiles/images/readme_images/createaccount2.png" alt="Sign Up/Sign In successful" width="600" height="323">
 
 #### Button Functionality
 (I) Submit Button
@@ -327,71 +372,60 @@ I ran all my Python scripts through the CI Python Linter, and resolved any issue
 - Testing Method: Filled in the comment form and clicked "Submit."
 - Result: The page refreshed, and the comment was displayed below the post as expected.
 
- <img src="staticfiles/images/readme_images/submit_button/submit1.png" alt="Prepare to submit comment">
- <img src="staticfiles/images/readme_images/submit_button/submit2.png" alt="Comment submitted">
+ <img src="staticfiles/images/readme_images/submit_button/submit1.png" alt="Prepare to submit comment" width="198" height="202"> <img src="staticfiles/images/readme_images/submit_button/submit2.png" alt="Comment submitted" width="350" height="202">
 
 (II) Delete Button
 - Expected: Clicking "Delete" should prompt a modal asking for confirmation.
 - Testing Method: Clicked "Delete" beneath a comment.
 - Result: The modal appeared, and the comment was successfully deleted upon confirmation.
-  See [Defensive functionality- Sign Out and Deletion](defensive-functionality-sign-out-and-deletion) for visual.
+  See [Defensive functionality-Sign Out and Deletion](#defensive-functionality-sign-out-and-deletion) for visual.
 
 (III) Edit Button
 - Expected: Clicking "Edit" should prepopulate the comment form with the comment text and replace the "Submit" button with an "Update" button.
 - Testing Method: Clicked "Edit" beneath a comment.
 - Result: The form was prepopulated with the comment text, and the "Update" button replaced the "Submit" button.
 
- <img src="staticfiles/images/readme_images/edit_button/edit1.png" alt="Select comment to edit">
- <img src="staticfiles/images/readme_images/edit_button/edit2.png" alt="Update comment">
- <img src="staticfiles/images/readme_images/edit_button/edit3.png" alt="Comment updated">
+ <img src="staticfiles/images/readme_images/edit_button/edit1.png" alt="Select comment to edit" width="350" height="211"> <img src="staticfiles/images/readme_images/edit_button/edit2.png" alt="Update comment" width="187" height="211">
+ <img src="staticfiles/images/readme_images/edit_button/edit3.png" alt="Comment updated" width="425" height="229">
 
 ### Unit Testing
 The project includes a suite of unit tests to ensure the functionality of key features, specifically related to blog post details and the comment system. Below is an overview of the provided unit tests:
 
 Test Files
+
 test_views.py: Contains tests for the blog views, including rendering of post details and comment submission.
 test_forms.py: Contains tests for the comment form validation.
+
 Blog Views Unit Tests (test_views.py)
 test_render_post_detail_page_with_comment_form:
 
-Verifies that the blog post detail page renders correctly.
-Ensures that the response contains the correct post title, content, and that a CommentForm instance is passed into the context.
+- Verifies that the blog post detail page renders correctly.
+- Ensures that the response contains the correct post title, content, and that a CommentForm instance is passed into the context.
+
 test_successful_comment_submission:
 
-Tests the process of submitting a comment.
-Simulates a logged-in user posting a comment on a blog post.
-Verifies that the comment submission is successful and that the response indicates the comment is awaiting approval.
+- Tests the process of submitting a comment.
+- Simulates a logged-in user posting a comment on a blog post.
+- Verifies that the comment submission is successful and that the response indicates the comment is awaiting approval.
+
 Comment Form Unit Tests (test_forms.py)
 test_form_is_valid:
 
-Tests whether the CommentForm is valid when provided with a valid comment body.
-Ensures the form passes validation.
+- Tests whether the CommentForm is valid when provided with a valid comment body.
+- Ensures the form passes validation.
+
 test_form_is_invalid:
 
-Tests the CommentForm when an empty comment body is submitted.
-Verifies that the form is invalid, ensuring proper validation is enforced.
-Running the Tests
-To run the unit tests, use the following command:
+- Tests the CommentForm when an empty comment body is submitted.
+- Verifies that the form is invalid, ensuring proper validation is enforced.
+
+Running the Tests 
+
+Used command:
 
 python manage.py test
 
-This will execute all the tests and provide feedback on any failures or issues.
-
-Below is an overview of the provided unit test for the About view:
-
-Test Files
-test_views.py: Contains a test for the "About Me" page, ensuring it renders correctly and displays the appropriate content.
-About View Unit Test (test_views.py)
-test_about_view:
-Purpose: Ensures that the "About Me" page is created and displayed properly.
-Setup: The setUp method creates an About instance with sample content.
-Test Case: This test will validate that the "About Me" content, once saved, can be properly retrieved and displayed on the relevant page.
-Running the Tests
-To run this test along with others, use the following command:
-
-python manage.py test
-
-This will run all tests, including those for the "About Me" page, and report any issues.
+in the terminal to execute all the tests and provide feedback on any failures or issues.
 
 Key Test Observations:
 Tests involving rendering the post detail page (with comment form) passed, meaning the page loaded without issues, even when no comments were present.
@@ -403,14 +437,18 @@ The unit tests confirm that the core features, including the post detail page, c
 
 ### Resolved Bugs
 
-#### Comment Id bug
+#### Comment Id Attribute
 
-- Same HTML validator throwing error with 'comment-id' attribute of <button> element.
-- Resolved- changed comment_id attribute to data-comment-id attribute on <button> element- comment_id not a valid attribute for <button> element.
-  
-#### Paragraph tag bug
-- HTML validation error in that, running HTML code through W3 Schools validator for post_detail.html from logged in view, a stray <p> opening tag is encided in the post content HTML body.
-- Resolved- wrapped the post content in a <div> element instead.
+An HTML validation error was detected for the comment_id attribute used on the <button> element in the post_detail.html template.
+
+Resolution:
+To ensure compliance with HTML standards, the attribute comment_id has been replaced with data-comment-id. Using the data- prefix provides valid custom attribute usage for the <button> element while preserving intended functionality.
+
+#### Paragraph Tag Validation
+An HTML validation error was identified in post_detail.html when using the W3C Validator, specifically involving an unclosed <p> tag within the post content section.
+
+Resolution:
+To address this, the post content has been wrapped in a <div> element instead of a <p> tag. This change resolves the validation issue while maintaining the intended structure and styling for the content.
 
 <img src="staticfiles/images/readme_images/bugs/ptag1.png" alt="Unclosed paragraph tag">
 <img src="staticfiles/images/readme_images/bugs/ptag2.png" alt="Unclosed paragraph tag detail">
@@ -418,9 +456,17 @@ The unit tests confirm that the core features, including the post detail page, c
 <img src="staticfiles/images/readme_images/bugs/ptag4.png" alt="Solution- wrap in div element">
 
 ### Known Bugs
-
+No other bugs identified after final checking of iteration.
+  
 ------
 ## Credits
-- Freepik
-- Django?
-- Bootstrap?
+- [Freepik](#https://www.freepik.com/)
+- [Django Documentation](#https://docs.djangoproject.com/en/5.1/)
+- [Bootstrap Documenetation](#https://getbootstrap.com/docs/5.3/getting-started/introduction/)
+- [Google Fonts](#https://fonts.google.com/)
+- [Fontawesome](#https://fontawesome.com/)
+- [Chat-GPT](#https://openai.com/chatgpt/)
+- [W3C MarkUp Validation Service](#https://validator.w3.org/)
+- [Jigsaw CSS Validator](#https://jigsaw.w3.org/css-validator/)
+- [CI Python Linter](#https://pep8ci.herokuapp.com/)
+- Code Institute- "I Think Therefore I Blog"
