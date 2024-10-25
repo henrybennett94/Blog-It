@@ -157,10 +157,8 @@ Cloudinary is a cloud-based service that provides powerful tools for managing, o
 
 ### Accessing code
 
-The application source code can be accessed at the Github repository (https://github.com/henrybennett94/Blog-It). To run the code from this repository, developers can clone the repository locally with terminal command:
-  git clone https://github.com/henrybennett94/Blog-It.git
-
-and then install dependencies by navigating to the project folder and running command:
+The application source code can be accessed at the Github repository (https://github.com/henrybennett94/Blog-It). To run the code from this repository, developers can clone the repository locally, open in an IDE
+and then install dependencies by navigating to the project folder and running terminal command:
   pip install -r requirements.txt
 
 To contribute, developers can fork the repository, create a new branch for their feature, and submit a pull request with a clear description of their changes.
