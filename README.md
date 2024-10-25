@@ -460,13 +460,13 @@ No other bugs identified after final checking of iteration.
   
 ------
 ## Credits
-- [Freepik](#https://www.freepik.com/)
-- [Django Documentation](#https://docs.djangoproject.com/en/5.1/)
-- [Bootstrap Documenetation](#https://getbootstrap.com/docs/5.3/getting-started/introduction/)
-- [Google Fonts](#https://fonts.google.com/)
-- [Fontawesome](#https://fontawesome.com/)
-- [Chat-GPT](#https://openai.com/chatgpt/)
-- [W3C MarkUp Validation Service](#https://validator.w3.org/)
-- [Jigsaw CSS Validator](#https://jigsaw.w3.org/css-validator/)
-- [CI Python Linter](#https://pep8ci.herokuapp.com/)
+- [Freepik](https://www.freepik.com/)
+- [Django Documentation](https://docs.djangoproject.com/en/5.1/)
+- [Bootstrap Documenetation](https://getbootstrap.com/docs/5.3/getting-started/introduction/)
+- [Google Fonts](https://fonts.google.com/)
+- [Fontawesome](https://fontawesome.com/)
+- [Chat-GPT](https://openai.com/chatgpt/)
+- [W3C MarkUp Validation Service](https://validator.w3.org/)
+- [Jigsaw CSS Validator](https://jigsaw.w3.org/css-validator/)
+- [CI Python Linter](https://pep8ci.herokuapp.com/)
 - Code Institute- "I Think Therefore I Blog"
