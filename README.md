@@ -1,10 +1,10 @@
 # Blog It!
 
-<img src="staticfiles/images/readme_images/responsive_images/macbookair.png" alt="Desktop View">
-
 Deployment link: (https://blog-it-app-f2464249567c.herokuapp.com/)
 
 Github Repository: (https://github.com/henrybennett94/Blog-It)
+
+<img src="staticfiles/images/readme_images/responsive_images/macbookair.png" alt="Desktop View">
 
 Welcome to Blog It! Whether you're a seasoned collector or simply curious about the charm of vintage finds, join us as we explore the world of antiques, share tips for restoration and care, and connect with fellow enthusiasts who appreciate the artistry and nostalgia of yesteryear. Let’s uncover the past together!
 
@@ -47,9 +47,9 @@ The MVP provides users with an interest in the subject, though anyone is welcome
 11. As a site admin I can create, read, update and delete posts so that I can manage my blog content.
 12. As a site user I can like others' posts so that I can show appreciation for other site users' content.
 
-This application was designed using Balsamiq to create wireframes. The method of the design was to conform to user stories.
+This application was designed using Balsamiq to create wireframes. The approach of the design was to conform to user stories, utilising a 'Mobile-first' approach to ensure responsivity would be developed and maintained.
 
-### Project Wireframes
+### Sample Project Wireframes
 
 <img src="staticfiles/images/readme_images/wireframes/posts-wireframe.png" alt="Posts Wireframe" width="400" height="250"> <img src="staticfiles/images/readme_images/wireframes/post-detail-wireframe.png" alt="Post Detail Wireframe" width="400" height="250"> 
 <img src="staticfiles/images/readme_images/wireframes/about-wireframe.png" alt="About Wireframe" width="550" height="300">
@@ -58,7 +58,7 @@ This application was designed using Balsamiq to create wireframes. The method of
 
 ## Agile Development
 
-The project was developed using Agile Methodology. User stories were mapped to a Github Projects project board to chart development progress, with four sections: 'To Do'- the backlog, 'In Progress'- initial developments, 'Bugs'- for mapping bugs encountered during testing, and 'Done'- to mark the story as completed. User Stories were also mapped to Issues, listed in the 'Issues' tab in the Github repository, and assigned between three milestones: 'Blog Posts', 'User Authentication', and 'User CRUD'. A fourth milestone, 'Future Features' exists for User Stories that were assigned 'Won't' in MoSCoW prioritisation, but can be developed in future iterations.
+The project was developed using Agile Methodology. User stories were mapped to a Github Projects project board to chart development progress, with four sections: 'To Do'- the backlog, 'In Progress'- initial developments, and 'Done'- to mark the story as completed. User Stories were also mapped to Issues, listed in the 'Issues' tab in the Github repository, and assigned between three milestones: 'Blog Posts', 'User Authentication', and 'User CRUD'. A fourth milestone, 'Future Features' exists for User Stories that were assigned 'Won't' in MoSCoW prioritisation, but can be developed in future iterations.
 
 ### Link to Project Board
 
@@ -89,9 +89,9 @@ User stories were worked on according to a MoSCoW prioritisation system, assigni
 
 ### ERD
 
-Entity Relational Diagram to demonstrate the structure of the database models.
+Entity Relational Diagrams to demonstrate the structure of the database models.
 
-#### Post
+#### Post model
 
 | KEY         | Entity     | Data        |
 |-------------|------------|-------------|
@@ -104,7 +104,7 @@ Entity Relational Diagram to demonstrate the structure of the database models.
 | Primary     | Excerpt    | Text        |
 | Primary     | Updated On | DateTime    |
 
-#### Comment
+#### Comment model
 
 | KEY         | Entity     | Data        |
 |-------------|------------|-------------|
@@ -114,14 +114,13 @@ Entity Relational Diagram to demonstrate the structure of the database models.
 | Primary     | Approved   | Boolean     |
 | Primary     | Created On | DateTime    |
 
-#### About
+#### About model
 
 | KEY         | Entity     | Data        |
 |-------------|------------|-------------|
 | Primary     | Title      | CharField   |
 | Primary     | Content    | Text        |
 | Primary     | Updated On | DateTime    |
-
 
 ------
 
@@ -148,7 +147,7 @@ Cloudinary is a cloud-based service that provides powerful tools for managing, o
   - Log in to herokuapp.com
   - From the Heroku dashboard, navigate to "New", and from the dropdown select "Create new app"
   - Choose a unique app name and select region, create app ("blog-it-app")
-  - In the Heroku my-shopping-app go to the Settings tab, reveal Config Vars and set the necessary keys and        values
+  - In the Heroku blog-it-app go to the Settings tab, reveal Config Vars and set the necessary keys and        values
   - Go to the Deploy tab, go to "Deployment Method" section and select Github
   - Search for and then select the relevant Github repository (https://github.com/henrybennett94/Blog-It), to connect it with the Heroku app
   - Navigate to the "Manual deploy" section, ensure the main branch is selected for deployment, and then select "Deploy"
@@ -164,7 +163,7 @@ The application source code can be accessed at the Github repository (https://gi
 and then install dependencies by navigating to the project folder and running command:
   pip install -r requirements.txt
 
-To contribute, developers can fork the repository, create a new branch for their feature, and submit a pull request with a clear description of your changes.
+To contribute, developers can fork the repository, create a new branch for their feature, and submit a pull request with a clear description of their changes.
  
 ------
 ## Features
@@ -173,62 +172,56 @@ To contribute, developers can fork the repository, create a new branch for their
 
 #### Overview of posts
   
-  <img src="staticfiles/images/readme_images/posts-overview1.png" alt="Posts Overview Page 1" width="500" height="250">
-  
-  <img src="staticfiles/images/readme_images/posts-overview2.png" alt="Posts Overview Page 2" width="500" height="250">
+  <img src="staticfiles/images/readme_images/posts-overview1.png" alt="Posts Overview Page 1" width="462" height="250"> <img src="staticfiles/images/readme_images/posts-overview2.png" alt="Posts Overview Page 2" width="462" height="250">
 
 #### View Post Details
 Users can select a post title to view the full content, including any comments associated with the post.
 
-  <img src="staticfiles/images/readme_images/post-detail.png" alt="View Post Details" width="600" height="300">
+  <img src="staticfiles/images/readme_images/post-detail.png" alt="View Post Details" width="553" height="300">
 
 #### User Authentication for Commenting
 - Registered users can comment on posts and have full control over their comments, including the ability to create, edit, and delete them.
 
-  <img src="staticfiles/images/readme_images/comment1.png" alt="Comment" width="500" height="250">
+  <img src="staticfiles/images/readme_images/comment1.png" alt="Comment" width="500" height="271">
 
 - For non-authenticated users, a prompt to log in will replace the comment form, encouraging them to sign in to leave a comment.
 - Users who have posted a comment can edit or delete their comment by selecting the respective options beneath the comment.
 - All comments submitted by logged-in users require approval from the site administrator before becoming publicly visible.
 
-  <img src="staticfiles/images/readme_images/commentapproval.png" alt="Comment approved" width="600" height="350">
-
-#### Timestamps for Posts and Comments
-Every post and comment includes a timestamp that reflects either the original post time or the last updated time, ensuring transparency in content updates.
-
- <img src="staticfiles/images/readme_images/datetime-comments.png" alt="Comments timestamp" width="550" height="300"> <img src="staticfiles/images/readme_images/datetime-posts.png" alt="Posts timestamp" width="250" height="360">
+  <img src="staticfiles/images/readme_images/commentapproval.png" alt="Comment approved" width="500" height="266">
 
 #### Draft Creation for Superusers
 Superusers can create new posts and save them as drafts via the admin panel. This allows them to review and revise content before making it publicly available.
 
 #### Manage posts
-- Expected: Site admin can, in the admin panel, create, update, read and delete posts, with changes reflected in the public website.
+Superusers can, in the admin panel, create, update, read and delete posts, with changes reflected in the public website.
 
-<img src="staticfiles/images/readme_images/drafts.png" alt="Create drafts" width="500" height="300">
-<img src="staticfiles/images/readme_images/manageposts.png" alt="Manage posts" width="500" height="300">
+<img src="staticfiles/images/readme_images/drafts.png" alt="Create drafts" width="500" height="300"> <img src="staticfiles/images/readme_images/manageposts.png" alt="Manage posts" width="500" height="300">
 
 #### 'About' Page
 The site includes an 'About' page accessible from the homepage, providing users with information about the site's purpose and goals.
 
-<img src="staticfiles/images/readme_images/nav2.png" alt="Navigation Links Picture 2" width="500" height="300">
+<img src="staticfiles/images/readme_images/nav2.png" alt="Navigation Links Picture 2" width="500" height="304">
 
 #### Defensive Actions for Deletions
 Before deleting a comment or post (for administrators), users are prompted to confirm or cancel the deletion, preventing accidental removal of content.
 
-<img src="staticfiles/images/readme_images/delete-confirm.png" alt="Confirm Delete" width="500" height="300">
+<img src="staticfiles/images/readme_images/delete-confirm.png" alt="Confirm Delete" width="500" height="287">
 
 ### Features to implement for future iterations:
 - 'Like' button
+  - As a site user I can like others' posts so that I can easily show appreciation for other site users' content.
+
 ### Possible revisions
 - Comment approval required
-  Implement logic to remove requirement for admin approval for all users posting comments.
+  - Implement logic to remove requirement for admin approval for all users posting comments.
 
 ------
 ## Testing
 
 ### Responsivity
 
-I used Google Chrome Responsive Viewer Extension to test responsivity across a range of devices. Sample mockups of the application in desktop, tablet, and smartphone view:
+I used the Google Chrome Responsive Viewer Extension to test responsivity across a range of devices. Sample mockups of the application in desktop, tablet, and smartphone view:
 
 #### Desktop View
 
@@ -260,7 +253,7 @@ I ran all my Python scripts through the CI Python Linter, and resolved any issue
 
 - Testing Method: Hovered over the navigation titles ('Home', 'About', 'Register', 'Login'). Verified that titles changed from grey to bold on hover, with the exception of the current page. Clicked on the links to check redirection.
   
-- Result: •	Result: Users were successfully redirected to the following URLs:
+- Result: Users were successfully redirected to the following URLs:
 
   - https://blog-it-app-f2464249567c.herokuapp.com/ 'Home'
   - https://blog-it-app-f2464249567c.herokuapp.com/about/ 'About'
@@ -268,7 +261,7 @@ I ran all my Python scripts through the CI Python Linter, and resolved any issue
   - https://blog-it-app-f2464249567c.herokuapp.com/accounts/login/ 'Login'
   on completing above action.
 
-<img src="staticfiles/images/readme_images/nav1.png" alt="Navigation Links Picture 1" width="400" height="200"> <img src="staticfiles/images/readme_images/nav2.png" alt="Navigation Links Picture 2" width="400" height="200">
+<img src="staticfiles/images/readme_images/nav1.png" alt="Navigation Links Picture 1" width="400" height="243"> <img src="staticfiles/images/readme_images/nav2.png" alt="Navigation Links Picture 2" width="400" height="243">
 
 #### Hover Functionality (text highlighting)
 - Expected: Hovering over post titles and preview text should highlight the content, indicating a clickable link to the full post.
@@ -278,19 +271,8 @@ I ran all my Python scripts through the CI Python Linter, and resolved any issue
 - Result: The text was highlighted as expected, indicating that it is linked to the full post content.
 
 
-<img src="staticfiles/images/readme_images/hover1.png" alt="On-hover Picture 1" width="400" height="200">
-<img src="staticfiles/images/readme_images/hover2.png" alt="On-hover Picture 2" width="400" height="200">
+<img src="staticfiles/images/readme_images/hover1.png" alt="On-hover Picture 1" width="400" height="223"> <img src="staticfiles/images/readme_images/hover2.png" alt="On-hover Picture 2" width="400" height="227">
 
-#### Links to posts
-- Expected: : Clicking on post titles or preview text should redirect users to the full post content.
-
-- Testing Method: Clicked on various post titles from the homepage.
-
-- Result: Users were successfully redirected to the full content of the posts (URL format: https://blog-it-app-f2464249567c.herokuapp.com/[post-title]).
-
-<img src="staticfiles/images/readme_images/links1.png" alt="Links to posts test Picture 1" width="400" height= "200">
-<img src="staticfiles/images/readme_images/links2.png" alt="Links to posts test Picture 2" width="400" height="200">
-  
 #### Next/Previous and pagination
 - Expected: A maximum of 6 posts should be displayed per page. Users should be able to navigate between pages using "NEXT" and "PREV" buttons.
 
@@ -305,14 +287,8 @@ I ran all my Python scripts through the CI Python Linter, and resolved any issue
   
   <img src="staticfiles/images/readme_images/pagination3.png" alt="Previous Button" width="284" height="172"> <img src="staticfiles/images/readme_images/pagination4.png" alt="Middle page" width="282" height="171">
 
-
 - Result: Pagination worked as expected.
 - Redirected to the correct pages based on the selection.
-
-  (I) Redirected to url https://blog-it-app-f2464249567c.herokuapp.com/?page=2 - as expected
-  (II) Redirected to url https://blog-it-app-f2464249567c.herokuapp.com/?page=3 - as expected
-  (III) Redirected to url https://blog-it-app-f2464249567c.herokuapp.com/?page=1 - as expected
-  (IV) Redirected to url https://blog-it-app-f2464249567c.herokuapp.com/?page=2 - as expected
   
 #### Sign Up/Sign In buttons and Success messages/failure prompts
 - Expected: After successfully registering or signing in, users should be redirected to the homepage, with appropriate success messages displayed.
@@ -336,7 +312,7 @@ I ran all my Python scripts through the CI Python Linter, and resolved any issue
 1. Tested deletion of a comment by selecting "Delete" and cancelling in the modal.
 2. Tested deletion of a post as admin and cancelled the action.
  
-  <img src="staticfiles/images/readme_images/delete-options1.png" alt="Select delete" width="400" height="200"> <img src="staticfiles/images/readme_images/delete-options-delete.png" alt="Confirm delete" width="400" height="200">
+<img src="staticfiles/images/readme_images/delete-options1.png" alt="Select delete" width="400" height="243"> <img src="staticfiles/images/readme_images/delete-options-delete.png" alt="Confirm delete" width="400" height="240">
 
 - Result: Both actions were cancelled as expected, with no changes to the content.
 
@@ -367,26 +343,19 @@ I ran all my Python scripts through the CI Python Linter, and resolved any issue
  <img src="staticfiles/images/readme_images/createaccount2.png" alt="Sign Up/Sign In successful" width="600" height="323">
 
 #### Button Functionality
-(I) Submit Button
-- Expected: After entering a comment and clicking "Submit," the comment should be posted, and the page should refresh with the new comment displayed.
-- Testing Method: Filled in the comment form and clicked "Submit."
-- Result: The page refreshed, and the comment was displayed below the post as expected.
 
- <img src="staticfiles/images/readme_images/submit_button/submit1.png" alt="Prepare to submit comment" width="198" height="202"> <img src="staticfiles/images/readme_images/submit_button/submit2.png" alt="Comment submitted" width="350" height="202">
-
-(II) Delete Button
+(I) Delete Button
 - Expected: Clicking "Delete" should prompt a modal asking for confirmation.
 - Testing Method: Clicked "Delete" beneath a comment.
 - Result: The modal appeared, and the comment was successfully deleted upon confirmation.
   See [Defensive functionality-Sign Out and Deletion](#defensive-functionality-sign-out-and-deletion) for visual.
 
-(III) Edit Button
+(II) Edit Button
 - Expected: Clicking "Edit" should prepopulate the comment form with the comment text and replace the "Submit" button with an "Update" button.
 - Testing Method: Clicked "Edit" beneath a comment.
 - Result: The form was prepopulated with the comment text, and the "Update" button replaced the "Submit" button.
 
- <img src="staticfiles/images/readme_images/edit_button/edit1.png" alt="Select comment to edit" width="350" height="211"> <img src="staticfiles/images/readme_images/edit_button/edit2.png" alt="Update comment" width="187" height="211">
- <img src="staticfiles/images/readme_images/edit_button/edit3.png" alt="Comment updated" width="425" height="229">
+ <img src="staticfiles/images/readme_images/edit_button/edit1.png" alt="Select comment to edit" width="350" height="211"> <img src="staticfiles/images/readme_images/edit_button/edit2.png" alt="Update comment" width="187" height="211"> <img src="staticfiles/images/readme_images/edit_button/edit3.png" alt="Comment updated" width="425" height="229">
 
 ### Unit Testing
 The project includes a suite of unit tests to ensure the functionality of key features, specifically related to blog post details and the comment system. Below is an overview of the provided unit tests:
@@ -436,13 +405,6 @@ The unit tests confirm that the core features, including the post detail page, c
 <img src="staticfiles/images/readme_images/unit-test.png" alt="Unit test results" width="400" height="108">
 
 ### Resolved Bugs
-
-#### Comment Id Attribute
-
-An HTML validation error was detected for the comment_id attribute used on the <button> element in the post_detail.html template.
-
-Resolution:
-To ensure compliance with HTML standards, the attribute comment_id has been replaced with data-comment-id. Using the data- prefix provides valid custom attribute usage for the <button> element while preserving intended functionality.
 
 #### Paragraph Tag Validation
 An HTML validation error was identified in post_detail.html when using the W3C Validator, specifically involving an unclosed <p> tag within the post content section.
