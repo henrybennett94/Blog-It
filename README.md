@@ -277,9 +277,11 @@ I ran all my Python scripts through the CI Python Linter, and resolved any issue
 - Testing Method:
   1.	Visited the homepage (https://blog-it-app-f2464249567c.herokuapp.com/?page=1) and clicked the "NEXT >>" button.
 
+
   <img src="staticfiles/images/readme_images/pagination1.png" alt="Next Button" width="600" height="362">
   
   2.	Repeated the process for different pages.
+
 
   <img src="staticfiles/images/readme_images/pagination2.png" alt="Next and Previous Button" width="400" height="242">
   
@@ -294,11 +296,13 @@ I ran all my Python scripts through the CI Python Linter, and resolved any issue
 - Testing Method:
   1. Registered a new user, filling in the required form fields and clicked "Sign Up."
 
+
     <img src="staticfiles/images/readme_images/createaccount1.png" alt="Sign Up Page" width="717" height="387">
 
   2. Logged in with the new credentials.
     
 - Result: For both actions, the user was redirected to the homepage with success messages ("Successfully signed in as [username]" and "You are logged in as [username]") displayed.
+
 
   <img src="staticfiles/images/readme_images/createaccount2.png" alt="Sign Up/Sign In successful" width="717" height="386">
 
@@ -309,10 +313,12 @@ I ran all my Python scripts through the CI Python Linter, and resolved any issue
 - Testing Method
 1. Tested deletion of a comment by selecting "Delete" and cancelling in the modal.
 2. Tested deletion of a post as admin and cancelled the action.
+
  
 <img src="staticfiles/images/readme_images/delete-options1.png" alt="Select delete" width="400" height="243"> <img src="staticfiles/images/readme_images/delete-options-delete.png" alt="Confirm delete" width="400" height="240">
 
 - Result: Both actions were cancelled as expected, with no changes to the content.
+
 
 <img src="staticfiles/images/readme_images/deleted.png" alt="Deleted" width="634" height="385">
   
@@ -321,6 +327,7 @@ I ran all my Python scripts through the CI Python Linter, and resolved any issue
 - Testing Method: Logged out from the navigation bar.
 - Result: The user was successfully logged out, and a confirmation prompt was displayed.
 
+
 <img src="staticfiles/images/readme_images/signout.png" alt="Confirm sign out" width="400" height="227"> <img src="staticfiles/images/readme_images/signout2.png" alt="Successful sign out" width="400" height="226">
 
 #### Protection for authenticated users
@@ -328,15 +335,18 @@ I ran all my Python scripts through the CI Python Linter, and resolved any issue
 - Testing Method: Logged out and attempted to comment on a post.
 - Result: Non-authenticated users were unable to leave comments, and the "Log in to leave a comment" message was displayed.
 
+
 <img src="staticfiles/images/readme_images/notloggedin.png" alt="Not logged in" width="600" height="361">
 
 #### Password requirements
 - Expected: Users must meet the specified password requirements when signing up. Both password fields must match for successful registration.
 - Testing Method: Tested both valid and invalid inputs (e.g., weak passwords, mismatched password fields).
 
+
 <img src="staticfiles/images/readme_images/password-requirements.png" alt="Password requirements" width="600" height="364">
 
 - Result: Valid inputs resulted in successful registration, while invalid inputs prompted error messages.
+
 
  <img src="staticfiles/images/readme_images/createaccount2.png" alt="Sign Up/Sign In successful" width="600" height="323">
 
@@ -405,10 +415,10 @@ The unit tests confirm that the core features, including the post detail page, c
 ### Resolved Bugs
 
 #### Paragraph Tag Validation
-An HTML validation error was identified in post_detail.html when using the W3C Validator, specifically involving an unclosed <p> tag within the post content section.
+An HTML validation error was identified in post_detail.html when using the W3C Validator, specifically involving an unclosed paragraph tag within the post content section.
 
 Resolution:
-To address this, the post content has been wrapped in a <div> element instead of a <p> tag. This change resolves the validation issue while maintaining the intended structure and styling for the content.
+To address this, the post content has been wrapped in a div element instead of a paragraph tag. This change resolves the validation issue while maintaining the intended structure and styling for the content.
 
 <img src="staticfiles/images/readme_images/bugs/ptag1.png" alt="Unclosed paragraph tag">
 <img src="staticfiles/images/readme_images/bugs/ptag2.png" alt="Unclosed paragraph tag detail">
